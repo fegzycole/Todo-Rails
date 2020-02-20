@@ -47,11 +47,5 @@ class Api::V1::TodolistsController < ApplicationController
 
   def set_todolist
     @todolist = Todolist.find(params[:id])
-
-    unless @todolist
-      respond_to do |format|
-        format.json { render json: { error: 'id does not exist' }, status: :created }
-      end
-    end
   end
 end
